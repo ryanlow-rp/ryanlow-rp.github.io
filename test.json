@@ -3,11 +3,11 @@
   "modules" : [
     {
       "type" : "core",
-      "codes" : ["C105", "C208", "C226"]
+      "modulecodes" : ["C105", "C208", "C226"]
     },
     {
       "type" : "specialisation",
-      "codes" : ["C346", "C347", "C348", "C349"]
+      "modulecodes" : ["C346", "C347", "C348", "C349"]
     }
   ]
 }
