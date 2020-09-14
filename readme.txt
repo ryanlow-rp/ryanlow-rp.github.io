@@ -1,0 +1,23 @@
+Good afternoon. Thank you for joining us for this break out session. We are from SOI, and we will be sharing our experience with using Screen Recording with Voice Capture as a T&L tool in a programming module. Before we start, we’d like to thank David Kwok from CED for guiding us for this action research.
+As academic staff, we have all encountered the challenges associated with trying to equally observe the 25 students in our classrooms. This year, due to the pandemic, we had to activate off-campus learning, and this has made observation of the students even more challenging.
+In my module, students learn iPad Programming. In a face-to-face lesson, it isn’t too difficult to go around the lab to observe the students’ work. The problem with OCL in this case is that there is significantly less time to do these observations. This leads to less visibility about students’ issues.
+To address this observation issue, we asked students to submit their screen recordings of some tasks together with a running audio commentary explaining what they were doing. We imposed a time limit of 20 minutes for each recording, and scoped the tasks accordingly. They could make multiple recordings and submit only the best one.
+Students expressed apprehension at several requirements. The time limit meant they would have to plan and practice to complete the tasks within 20 minutes. They were not accustomed to recording their work, and their voice, and explaining what they were doing as they were doing it.
+Apprehensions aside, some students produced quality recordings which we later shared as peer learning resources. Other than allowing us to observe students’ work, we found that Screen Recording with Voice Capture could be used as a T&L tool to support student learning.
+For this study, our purpose was to investigate how students’ perceptions in 3 areas - ease of use, usefulness and learning process gains - would affect firstly, their intention for future use of the tool and secondly, their perceptions of improvements in learning.
+Our research questions aimed to look at:
+- the levels and relationships for our 5 study variables
+- to determine if perceptions in the 3 areas could predict intention for future use and perceptions of learning,
+- and likes, challenges and areas for improvement noted by the students 
+The models shown here provide a more intuitive and graphical representation of our study variables for research questions 3 and 4. These were adapted from an established model called the Technology Acceptance Model, and shows the expected relationship between our independent and dependent study variables.
+We crafted a Microsoft Forms survey which had 3 Likert-scale questions per study variable, resulting in a total of 15 Likert-scale questions. 3 open-ended questions were provided for research question 5. The survey was administered in week 11 to all iPad Programming students after they had recorded about 3 videos.
+The population consisted of 46 Year 3 students from the Diploma in Mobile Software Development, School of Infocomm. 36 students responded, which equated to a response rate of approximately 80%. Boys outnumbered girls 3 to 1, and they were relatively evenly spread from ages 19 to 21.
+The numbers were crunched using SPSS. It showed that our 3 independent and 2 dependent variables were related. The responses to ease of use, learning process and learning were neutral while usefulness and intention to use was not favourable.
+We found that perceptions on learning process gains had the strongest impact on perceptions of learning. That sounds inherently logical - if the learning process is improved, the learning is improved. The responses to the open-ended questions, which we will see shortly, corroborate this finding.
+When it comes to intention for future use, perceived usefulness was the strongest predictor. Previously, we saw that the reported levels for these 2 study variables were not favourable. It seems to indicate that students could not readily see the usefulness of doing Screen Recording with Voice Capture.
+Students could readily identify that recording improved their learning process by requiring additional organisation, planning, practicing, memorising and digesting of information. They felt the usefulness was more as evidence of work done and for review of work. They found that recording was not difficult.
+Overall, some students felt that recording with voice was outside of their comfort zone, or had equipment issues, or that the extra effort was time-consuming, or that the time limit was challenging. A particularly useful suggestion was for training to be provided.
+
+
+
+
