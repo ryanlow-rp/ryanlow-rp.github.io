@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-11-21T03:22:08Z",
+  "id": "goBWA",
+  "duration": 0,
+  "title": "Codelabs authoring and hosting on Google App Engine",
+  "authors": "ryanlow",
+  "summary": "Codelabs authoring and hosting on Google App Engine",
+  "source": "1fA0XviI2xkLRlMEaE_IEdwoGyIQY-uS4Fkv14awBTsE",
+  "theme": "self-help",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "Self-Help"
+  ],
+  "tags": [
+    "kiosk",
+    "web"
+  ],
+  "feedback": "mailto:ryanlow.sg@gmail.com",
+  "url": "goBWA"
+}

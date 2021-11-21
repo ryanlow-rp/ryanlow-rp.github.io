@@ -1,0 +1,326 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Codelabs authoring and hosting on Google App Engine</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="goBWA"
+                  title="Codelabs authoring and hosting on Google App Engine"
+                  environment="web"
+                  feedback-link="mailto:ryanlow.sg@gmail.com">
+    
+      <google-codelab-step label="Microsoft Official" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<h2 is-upgraded>All the Microsoft Office 365 apps explained</h2>
+<p><a href="https://www.youtube.com/watch?v=kV_Wu7-mY3s" target="_blank">https://www.youtube.com/watch?v=kV_Wu7-mY3s</a></p>
+<h2 is-upgraded>Get started with Power Automate</h2>
+<ol type="1" start="1">
+<li>The first step in creating an automation is to sign up, or, if you already have an account with Power Automate, sign in.</li>
+</ol>
+<h2 is-upgraded>Training</h2>
+<p>Overview</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/power-automate/getting-started" target="_blank">https://docs.microsoft.com/en-us/power-automate/getting-started</a></li>
+<li><a href="https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog" target="_blank">https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog</a></li>
+</ul>
+<p>App maker</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-app-maker" target="_blank">https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-app-maker</a></li>
+</ul>
+<p>Developer</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-developer" target="_blank">https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-developer</a></li>
+</ul>
+<p>Functional consultant</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-functional-consultant" target="_blank">https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-functional-consultant</a></li>
+</ul>
+<h3 is-upgraded>App maker</h3>
+<p><a href="https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-app-maker" target="_blank">https://docs.microsoft.com/en-us/power-automate/learning-catalog/learning-catalog-app-maker</a></p>
+<p><a href="https://docs.microsoft.com/en-us/learn/modules/get-started-flows/1-introduction" target="_blank">https://docs.microsoft.com/en-us/learn/modules/get-started-flows/1-introduction</a></p>
+<h2 is-upgraded>Important concepts in Power Automate</h2>
+<ul>
+<li>Every flow has two main parts: a trigger, and one or more actions.</li>
+<li>You can think of the trigger as the starting action for the flow. The trigger can be something like a new email arriving in your inbox or a new item being added to a SharePoint list.</li>
+<li>Actions are what you want to happen when a trigger is invoked. For example, the new email trigger will start the action of creating a new file on OneDrive for Business. Other examples of actions include sending an email, posting a tweet, and starting an approval.</li>
+</ul>
+<p>Power Automate Desktop</p>
+<p><a href="https://docs.microsoft.com/en-us/power-automate/desktop-flows/introduction" target="_blank">https://docs.microsoft.com/en-us/power-automate/desktop-flows/introduction</a></p>
+<h2 is-upgraded>Introduction: Planning a Power Automate project</h2>
+<p><a href="https://docs.microsoft.com/en-us/power-automate/guidance/planning/introduction" target="_blank">https://docs.microsoft.com/en-us/power-automate/guidance/planning/introduction</a></p>
+<ol type="1" start="1">
+<li>x</li>
+</ol>
+<h2 is-upgraded>Introduction: Planning a Power Automate project</h2>
+<p><a href="https://docs.microsoft.com/en-us/power-automate/guidance/planning/introduction" target="_blank">https://docs.microsoft.com/en-us/power-automate/guidance/planning/introduction</a></p>
+<ol type="1" start="1">
+<li>x</li>
+</ol>
+<h2 is-upgraded>Introduction: Planning a Power Automate project</h2>
+<p><a href="https://docs.microsoft.com/en-us/power-automate/guidance/planning/introduction" target="_blank">https://docs.microsoft.com/en-us/power-automate/guidance/planning/introduction</a></p>
+<ol type="1" start="1">
+<li>x</li>
+</ol>
+<h2 is-upgraded>Access the codelab formatting guide</h2>
+<ol type="1" start="1">
+<li><a href="https://docs.google.com/document/d/18dnMdUJQaGKY1Tit_-fO1YOpOpAbA4hh0YDXQlCEjvA/edit#heading=h.woxdyaltjwz2" target="_blank">The codelab formatting guide</a> provides a how-to guide on formatting a Google Doc for Codelab. For example:</li>
+</ol>
+<ul>
+<li>Codelab metadata</li>
+<li>Styles</li>
+<li>Fonts (Courier New for code snippets and Consolas for command-line snippets)</li>
+<li>Info boxes</li>
+<li>Download buttons</li>
+<li>Per-step time estimates</li>
+<li>Conditional steps</li>
+</ul>
+<h2 is-upgraded>Access the codelab example doc</h2>
+<ol type="1" start="1">
+<li><a href="https://docs.google.com/document/d/1rpHleSSeY-MJZ8JvncvYA8CFqlnlcrW8-a4uEaqizPY/edit" target="_blank">The codelab example doc</a> provides a template which can be edited directly.</li>
+</ol>
+<h3 class="faq" is-upgraded>Frequently Asked Questions</h3>
+<ul class="faq">
+<li><a href="https://github.com/googlecodelabs/tools" target="_blank">Where are the tools for authoring and serving codelabs</a>?</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Creating a Google Doc as a Codelab" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Codelab metadata</li>
+<li>Heading 1</li>
+<li>Courier New (for code snippets)</li>
+<li>Consolas (for command-line snippets)</li>
+<li>Info boxes (positive information and negative information)</li>
+<li>Download buttons</li>
+<li>Per-step time estimates</li>
+<li>Conditional steps</li>
+</ul>
+<h2 is-upgraded>Codelab metadata</h2>
+<ol type="1" start="1">
+<li>Fields for Codelab metadata</li>
+</ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Summary</strong></p>
+</td><td colspan="1" rowspan="1"><p>Enter summary info</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>URL</strong></p>
+</td><td colspan="1" rowspan="1"><p>URL for this code lab (<strong>this will be the folder name of the exported codelab</strong>)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Category</strong></p>
+</td><td colspan="1" rowspan="1"><p>Enter category info</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Status</strong></p>
+</td><td colspan="1" rowspan="1"><p>Draft (example value)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Feedback Link</strong></p>
+</td><td colspan="1" rowspan="1"><p>URL for providing feeback</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Environment</strong></p>
+</td><td colspan="1" rowspan="1"><p>web (example value)</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>Author</strong></p>
+</td><td colspan="1" rowspan="1"><p>Enter author info</p>
+</td></tr>
+</table>
+<h2 is-upgraded>Heading 1</h2>
+<ol type="1" start="1">
+<li>Use the <strong>Heading 1 </strong>paragraph style to delineate the steps of the codelab</li>
+</ol>
+<h2 is-upgraded>Courier New for code snippets</h2>
+<ol type="1" start="1">
+<li>Create a single-cell table, content uses font <strong>Courier New</strong></li>
+<li>Provide file name above table using <strong>Heading 3</strong></li>
+</ol>
+<h3 is-upgraded>Car.class</h3>
+<pre><code>class Car {
+}</code></pre>
+<h2 is-upgraded>Consolas for command-line snippets</h2>
+<ol type="1" start="1">
+<li>Create a single-cell table, content uses font <strong>Consolas</strong></li>
+</ol>
+<pre>javac Car.java</pre>
+<h2 is-upgraded>Info boxes (positive information and negative information)</h2>
+<ol type="1" start="1">
+<li>Positive information: create a single-cell table, content uses <strong>light green 3</strong> background</li>
+</ol>
+<aside class="special"><h4 is-upgraded>Positive information</h4>
+</aside>
+<ol type="1" start="2">
+<li>Create a single-cell table, create a single-cell table, content uses <strong>light orange 3</strong> background</li>
+</ol>
+<aside class="warning"><h4 is-upgraded>Negative information</h4>
+</aside>
+<h2 is-upgraded>Download buttons</h2>
+<ol type="1" start="1">
+<li>Hyperlink with a <strong>dark green 1</strong> background</li>
+<li>Link text begins with <strong>Download</strong> - file download icon will be added to the button</li>
+</ol>
+<p><a href="http://somelink.com" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download File</paper-button></a></p>
+<h2 is-upgraded>Per-step time estimates</h2>
+<ol type="1" start="1">
+<li>annotate each step in your codelab doc with a <strong>Duration:</strong> which uses <strong>dark grey 1 </strong>text</li>
+</ol>
+<p>Duration 1:00</p>
+<h2 is-upgraded>Conditional steps</h2>
+<ol type="1" start="1">
+<li>annotate each step in your codelab doc with a <strong>Environment:</strong> which uses <strong>dark grey 1 </strong>text</li>
+</ol>
+<p>Environment: Web, Kiosk</p>
+<h3 class="faq" is-upgraded>Frequently Asked Questions</h3>
+<ul class="faq">
+<li><a href="https://docs.google.com/document/d/18dnMdUJQaGKY1Tit_-fO1YOpOpAbA4hh0YDXQlCEjvA/edit#heading=h.woxdyaltjwz2" target="_blank">Where is the Codelab formatting guide</a>? </li>
+<li><a href="https://docs.google.com/document/d/1rpHleSSeY-MJZ8JvncvYA8CFqlnlcrW8-a4uEaqizPY/edit" target="_blank">Where is the Codelab example doc</a> ?</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Using claat" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Get claat</li>
+<li>claat export (create static html pages)</li>
+<li>claat serve (download dependencies and host locally)</li>
+</ul>
+<h2 is-upgraded>Get claat</h2>
+<p><a href="https://github.com/googlecodelabs/tools/releases/tag/v1.1.0" target="_blank"><paper-button class="colored" raised><iron-icon icon="file-download"></iron-icon>Download the binary</paper-button></a></p>
+<ol type="1" start="1">
+<li>For macOS (assuming binary is <code>claat-darwin-amd64</code>), set executable permissions and copy the binary to a location specified in the <code>$PATH</code> environment variable</li>
+</ol>
+<pre>chmod 555 claat-darwin-amd64
+cp claat-darwin-amd64 /usr/local/bin/</pre>
+<ol type="1" start="2">
+<li>For other platforms, copy the binary to a location specified in the <code>$PATH</code> environment variable</li>
+</ol>
+<h2 is-upgraded>claat export (create static html pages)</h2>
+<ol type="1" start="1">
+<li>Obtain the google doc id from the URL of the Google Doc (right after docs.google.com/document/d/)</li>
+<li>Run the command shown below</li>
+</ol>
+<ul>
+<li>use the platform-specific claat executable name (e.g. <code>claat-darwin-amd64</code> for macOS, <code>claat-windows-386.exe</code> for Windows)</li>
+<li>replace <code>googledocid</code> with the google doc id</li>
+<li>a folder based on the URL field of the codelab metadata will be created</li>
+</ul>
+<pre>claat-darwin-amd64 export googledocid</pre>
+<h2 is-upgraded>claat serve (download dependencies and serve content locally)</h2>
+<ol type="1" start="1">
+<li>Run the command shown below</li>
+</ol>
+<ul>
+<li>two folders will be created - <code>elements</code> and <code>bower_components</code></li>
+<li>the codelab will be served locally</li>
+</ul>
+<pre>claat-darwin-amd64 serve</pre>
+<aside class="warning"><p>The <code>claat serve</code> command must be run at least once to download the dependencies, even if there is no intention to serve the content locally.</p>
+</aside>
+<h3 class="faq" is-upgraded>Frequently Asked Questions</h3>
+<ul class="faq">
+<li>None</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Hosting on google app engine" duration="0">
+        <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
+<ul class="checklist">
+<li>Set up Google App Engine</li>
+<li>Host static content on Google App Engine</li>
+</ul>
+<h2 is-upgraded>Set up Google App Engine</h2>
+<ol type="1" start="1">
+<li>Go to <a href="https://cloud.google.com/appengine/" target="_blank">Google App Engine</a> and create an account</li>
+<li>Go to <a href="https://console.cloud.google.com" target="_blank">Google App Engine console</a> and create a new project</li>
+</ol>
+<h2 is-upgraded>Host static content on Google App Engine (<a href="https://cloud.google.com/appengine/docs/standard/python/getting-started/hosting-a-static-website" target="_blank">Reference</a>)</h2>
+<ol type="1" start="1">
+<li>Download, install and initalize the <a href="https://cloud.google.com/sdk/docs/" target="_blank">Google Cloud SDK</a></li>
+</ol>
+<ul>
+<li>add the <code>bin</code> folder to the <code>$PATH</code> environment variable</li>
+</ul>
+<ol type="1" start="2">
+<li>Create a content folder that has the same name as your project ID. You can find your project ID in the Console.</li>
+<li>In the content folder, create a file <code>app.yaml</code></li>
+</ol>
+<h3 is-upgraded>app.yaml</h3>
+<pre><code>runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)</code></pre>
+<ol type="1" start="4">
+<li>In the content folder, create a folder <code>www</code></li>
+<li>From the <code>www</code> folder</li>
+</ol>
+<ul>
+<li>run the <code>claat export</code> command (see previous step)</li>
+<li>run the <code>claat serve</code> command (see previous step)</li>
+</ul>
+<aside class="special"><p>Once the <code>elements</code> and <code>bower_components</code> folders are created in the <code>www</code> folder, you can use the <code>claat export</code> command below from the content folder and skip the <code>claat serve</code> command:</p>
+</aside>
+<pre>claat-darwin-amd64 export -o www googledocid</pre>
+<ol type="1" start="6">
+<li>From the content folder</li>
+</ol>
+<ul>
+<li>run the <code>gloud app deploy</code> command</li>
+</ul>
+<pre>gcloud app deploy -v v1</pre>
+<aside class="special"><p>On first run, specify the <a href="https://cloud.google.com/appengine/docs/locations" target="_blank">geographic location</a> to deploy to. For Singapore, use asia-east2.</p>
+</aside>
+<aside class="warning"><p>The -v switch is used to specify the version of the app. App engine allows up to 15 versions (free) / 120 versions (paid) of an app before previous versions have to be deleted.</p>
+</aside>
+<ul>
+<li>run the <code>gloud app browse</code> command (optional)</li>
+</ul>
+<pre>gcloud app browse</pre>
+<aside class="special"><p>The URL of your Codelab will be https://<strong>appengineappid</strong>.appspot.com/<strong>urlname</strong>/index.html (where <strong>appengineappid</strong> is the app engine project ID and <strong>urlname</strong> is the URL field from the codelab metadata)</p>
+</aside>
+<h3 class="faq" is-upgraded>Frequently Asked Questions</h3>
+<ul class="faq">
+<li><a href="https://www.architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/" target="_blank">How do I add to the $PATH environment variable in macOS</a>?</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
