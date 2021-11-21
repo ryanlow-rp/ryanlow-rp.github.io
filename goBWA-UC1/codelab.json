@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2021-11-21T03:48:46Z",
-  "id": "goBWA",
+  "updated": "2021-11-21T03:36:23Z",
+  "id": "goBWA-UC1",
   "duration": 0,
-  "title": "goBWA",
+  "title": "goBWA - Use Case 1",
   "authors": "ryanlow",
-  "summary": "Train the trainer material for goBWA",
-  "source": "1fA0XviI2xkLRlMEaE_IEdwoGyIQY-uS4Fkv14awBTsE",
+  "summary": "Train the trainer material for goBWA - Use Case 1",
+  "source": "1XTfj3hR8juUuVi1qVxDrct-3zdDAtVxNE3APnParKK0",
   "theme": "self-help",
   "status": [
     "draft"
@@ -22,5 +22,5 @@
     "web"
   ],
   "feedback": "mailto:ryanlow.sg@gmail.com",
-  "url": "goBWA"
+  "url": "goBWA-UC1"
 }
