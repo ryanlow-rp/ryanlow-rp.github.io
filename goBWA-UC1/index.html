@@ -30,16 +30,135 @@
       <google-codelab-step label="Microsoft Official" duration="0">
         <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
 <ul class="checklist">
-<li>TBC</li>
+<li>Microsoft Forms - form creation</li>
+<li>Sharepoint - list creation</li>
+<li>Power Automate - automated flow</li>
+</ul>
+<h2 is-upgraded>Scenario</h2>
+<ul>
+<li>Create a form in Microsoft Forms about commute to work</li>
+<li>Create an Excel file in OneDrive to store the form responses</li>
+<li>Create a Sharepoint List to store the form responses</li>
+<li>When a new form response is submitted</li>
+<li>save the response to the Excel file and the Sharepoint List</li>
+<li>send an acknowledgement email to the respondent</li>
 </ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Introduction to Office 365" duration="0">
-        <p><a href="https://www.techrepublic.com/article/microsoft-365-a-cheat-sheet/" target="_blank">https://www.techrepublic.com/article/microsoft-365-a-cheat-sheet/</a></p>
-<p><a href="https://www.meridianoutpost.com/resources/articles/microsoft-365-office-apps-explained.php" target="_blank">https://www.meridianoutpost.com/resources/articles/microsoft-365-office-apps-explained.php</a></p>
-<p><a href="https://www.youtube.com/watch?v=kV_Wu7-mY3s" target="_blank">https://www.youtube.com/watch?v=kV_Wu7-mY3s</a></p>
+      <google-codelab-step label="Microsoft Forms - form creation" duration="0">
+        <h2 is-upgraded>References</h2>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/office/create-a-form-with-microsoft-forms-4ffb64cc-7d5d-402f-b82e-b1d49418fd9d" target="_blank">Create a form with Microsoft Forms</a></li>
+<li><a href="https://helpdeskgeek.com/how-to/how-to-use-microsoft-forms/" target="_blank">How to Use Microsoft Forms</a></li>
+<li><a href="https://techcommunity.microsoft.com/t5/microsoft-forms/difference-between-a-form-and-a-quiz/m-p/83278" target="_blank">Difference between form and quiz</a> </li>
+</ul>
+<h2 is-upgraded>Form to be created</h2>
+<p class="image-container"><img style="width: 1103.32px" src="img/cba863dcd45f1672.png"></p>
+<h2 is-upgraded>Steps</h2>
+<h3 is-upgraded>Form creation</h3>
+<ol type="1" start="1">
+<li>Log in to <a href="https://forms.office.com/" target="_blank">Microsoft Forms</a></li>
+<li>Create a new form <code>Commute to work survey</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/861d0c86907ca410.png"></p>
+<aside class="special"><p><strong>Question types</strong></p>
+<p class="image-container"><img style="width: 1089.00px" src="img/6124080b2a555900.png"></p>
+</aside>
+<h3 is-upgraded>Section and question creation</h3>
+<ol type="1" start="3">
+<li>Create all sections and questions</li>
+</ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p>Section 1</p>
+</td><td colspan="1" rowspan="1"><p><code>Transportation Type</code></p>
+</td><td colspan="1" rowspan="1"><p><code>Choose the transportation mode(s) that you use for the bulk of your commute to work</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Question 1</p>
+<p>Choice</p>
+<p>Required</p>
+</td><td colspan="1" rowspan="1"><p><code>Transportation Type</code></p>
+</td><td colspan="1" rowspan="1"><p><code>Public</code></p>
+<p><code>Personal</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Question 2</p>
+<p>Choice</p>
+<p>Multiple answers</p>
+<p>Required</p>
+</td><td colspan="1" rowspan="1"><p><code>Which mode(s) of transportation do you use?</code></p>
+</td><td colspan="1" rowspan="1"><p><code>MRT</code></p>
+<p><code>Bus</code></p>
+<p><code>Car</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Question 3</p>
+<p>Choice</p>
+<p>Multiple answers</p>
+<p>Required</p>
+</td><td colspan="1" rowspan="1"><p><code>Which mode(s) of transportation do you use?</code></p>
+</td><td colspan="1" rowspan="1"><p><code>Car</code></p>
+<p><code>Walk</code></p>
+<p><code>Bicycle</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Section 2</p>
+</td><td colspan="1" rowspan="1"><p><code>Commute information</code></p>
+</td><td colspan="1" rowspan="1"></td></tr>
+<tr><td colspan="1" rowspan="1"><p>Question 4</p>
+<p>Text</p>
+<p>Restrictions</p>
+<p>Less than 360</p>
+</td><td colspan="1" rowspan="1"><p><code>Total commute time in minutes</code></p>
+</td><td colspan="1" rowspan="1"></td></tr>
+<tr><td colspan="1" rowspan="1"><p>Question 5</p>
+<p>Rating</p>
+<p>Levels 5</p>
+<p>Symbol Star</p>
+</td><td colspan="1" rowspan="1"><p><code>Rate your commute experience</code></p>
+</td><td colspan="1" rowspan="1"></td></tr>
+</table>
+<h3 is-upgraded>Branching</h3>
+<ol type="1" start="4">
+<li>In Question 1, click on the ellipses and select <code>Add branching</code>. </li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/1b51d6b892f25b62.png"></p>
+<ol type="1" start="5">
+<li>Configure branching.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/74d0c31b89539e2a.png"></p>
+<h3 is-upgraded>Form URL</h3>
+<ol type="1" start="6">
+<li>Click <code>Share</code> and <code>Copy</code> to copy the URL to the form</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/d5e010906830de0a.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Microsoft Excel - form response file" duration="0">
+        <ol type="1" start="1">
+<li>Create an Excel document with the following headings</li>
+</ol>
+<pre>Respond ID
+Response DateTime
+Responder Email
+Responder Name
+Transportation Type
+Transportation Modes
+Commute Time
+Commute Experience</pre>
+<p class="image-container"><img style="width: 1103.32px" src="img/a9cefa854c871366.png"></p>
+<ol type="1" start="2">
+<li>Click <code>Format as Table</code> and select a table style.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/e2f56308ae5d2002.png"></p>
+<ol type="1" start="3">
+<li>Confirm the range of cells for the table and check <code>My table has headers</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/5fdb1b80ae248c5b.png"></p>
+<ol type="1" start="4">
+<li>The table should have the default name of <code>Table1</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/27e96c98820fa1c6.png"></p>
 
 
       </google-codelab-step>
