@@ -127,7 +127,7 @@
 <p class="image-container"><img style="width: 1103.32px" src="img/74d0c31b89539e2a.png"></p>
 <h3 is-upgraded>Form URL</h3>
 <ol type="1" start="6">
-<li>Click <code>Share</code> and <code>Copy</code> to copy the URL to the form</li>
+<li>Click <code>Share</code> and <code>Copy</code> to copy the URL to the form, which will be used when we want to submit a response to this form.</li>
 </ol>
 <p class="image-container"><img style="width: 1103.32px" src="img/d5e010906830de0a.png"></p>
 
@@ -136,9 +136,9 @@
     
       <google-codelab-step label="Microsoft Excel - form response file" duration="0">
         <ol type="1" start="1">
-<li>Create an Excel document with the following headings</li>
+<li>Create an <a href="https://ryanlow-rp.github.io/resources/goBWA/Commute%20survey%20responses.xlsx" target="_blank">Excel document</a> <code>Commute survey responses.xlsx</code> with the following headings</li>
 </ol>
-<pre>Respond ID
+<pre>Response ID
 Response DateTime
 Responder Email
 Responder Name
@@ -146,19 +146,138 @@ Transportation Type
 Transportation Modes
 Commute Time
 Commute Experience</pre>
-<p class="image-container"><img style="width: 1103.32px" src="img/a9cefa854c871366.png"></p>
+<p class="image-container"><img style="width: 1103.32px" src="img/e6a58436debe9131.png"></p>
 <ol type="1" start="2">
 <li>Click <code>Format as Table</code> and select a table style.</li>
 </ol>
-<p class="image-container"><img style="width: 1103.32px" src="img/e2f56308ae5d2002.png"></p>
+<p class="image-container"><img style="width: 1103.32px" src="img/9f964a3812f652b1.png"></p>
 <ol type="1" start="3">
 <li>Confirm the range of cells for the table and check <code>My table has headers</code></li>
 </ol>
-<p class="image-container"><img style="width: 1103.32px" src="img/5fdb1b80ae248c5b.png"></p>
+<p class="image-container"><img style="width: 1103.32px" src="img/52983ca4ff29b5bd.png"></p>
 <ol type="1" start="4">
 <li>The table should have the default name of <code>Table1</code></li>
 </ol>
-<p class="image-container"><img style="width: 1103.32px" src="img/27e96c98820fa1c6.png"></p>
+<p class="image-container"><img style="width: 1103.32px" src="img/8eef2936137109c3.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="OneDrive - upload Excel document" duration="0">
+        <ol type="1" start="1">
+<li>Upload the Excel document to your OneDrive folder. For this guide, we will assume that you have a folder called <code>goBWA</code> in the root of your OneDrive and the file is uploaded to <code>/goBWA/Commute survey responses.xlsx</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/64f98603157b70c8.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Power Automate - Automated Cloud Flow" duration="0">
+        <ol type="1" start="1">
+<li>Open <a href="https://asia.flow.microsoft.com/en-us/" target="_blank">Power Automate</a></li>
+<li>Click <code>My flows</code>, <code>Automated cloud flow</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/7fdbc565190807d9.png"></p>
+<ol type="1" start="3">
+<li>Create flow <code>Commute survey response submitted</code> with the trigger <code>When a new response is submitted Microsoft Forms</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/d495e4ed06b9e67a.png"></p>
+<ol type="1" start="4">
+<li>Select the form from the dropdown list.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/a8ecd836d6ae5bda.png"></p>
+<ol type="1" start="5">
+<li>Click <code>New step</code> to add a new step to the end of the flow.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/beab543a085aa970.png"></p>
+<ol type="1" start="6">
+<li>Search for and select <code>Get response details Microsoft Forms</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/fddf37973b06e33d.png"></p>
+<ol type="1" start="7">
+<li>For the <code>Form Id</code>, select the form from the dropdown list. For the <code>Response Id</code>, select <code>Response Id</code> from the Dynamic content list.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/df3f8a1276f081a.png"></p>
+<aside class="special"><p><a href="https://blog.enterprisedna.co/power-automate-dynamic-content-overview/" target="_blank"><strong>Dynamic content</strong></a></p>
+<p>Dynamic content are variables produced by triggers and actions within a flow diagram.</p>
+<p>Each flow step generates its own set of Dynamic content.</p>
+<p>To make it easier to distinguish between the different flow steps, rename every flow step to something meaningful. The <code>Rename</code> option can be accessed by clicking on the ellipses for that flow step.</p>
+</aside>
+<ol type="1" start="8">
+<li>Search for and select <code>Add a row into a table Excel Online (Business)</code></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/b40b3d2c9f1e0b5.png"></p>
+<ol type="1" start="9">
+<li>Fill in the first 4 fields for the OneDrive file in <code>/goBWA/Commute survey responses.xlsx</code>. For the remaining fields, select from the Dynamic content list.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/f00bdff61ce29c9.png"></p>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Field</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Flow step</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Dynamic content</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Response ID</p>
+</td><td colspan="1" rowspan="1"><p>When a new response is submitted</p>
+</td><td colspan="1" rowspan="1"><p>Response ID</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Response DateTime</p>
+</td><td colspan="1" rowspan="1"><p>Get response details</p>
+</td><td colspan="1" rowspan="1"><p>Submission time</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Responder Email</p>
+</td><td colspan="1" rowspan="1"><p>Get response details</p>
+</td><td colspan="1" rowspan="1"><p>Responders&#39; Email</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Transportation Type</p>
+</td><td colspan="1" rowspan="1"><p>Get response details</p>
+</td><td colspan="1" rowspan="1"><p>Transportation Type</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Transportation Modes</p>
+</td><td colspan="1" rowspan="1"><p>Get response details</p>
+</td><td colspan="1" rowspan="1"><p>Which mode(s) of transportation do you use?</p>
+<p>Which mode(s) of transportation do you use?</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Commute Time</p>
+</td><td colspan="1" rowspan="1"><p>Get response details</p>
+</td><td colspan="1" rowspan="1"><p>Total commute time in minutes</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Commute Experience</p>
+</td><td colspan="1" rowspan="1"><p>Get response details</p>
+</td><td colspan="1" rowspan="1"><p>Rate your commute experience</p>
+</td></tr>
+</table>
+<aside class="special"><p><strong>Notes</strong></p>
+<ol type="1" start="1">
+<li>Response details show the question titles as well as the section titles.</li>
+<li>In the form, question 2 and 3 have the same title. From the dynamic content list, there is no way to tell which response is for question 2 or question 3.</li>
+<li>Multiple pieces of dynamic content can be used to populate a single excel field, as is the case for the field Transportation Mode.</li>
+<li>Leave the Responder Name field empty for now, we will fix this shortly.</li>
+</ol>
+<p><strong>Best practice</strong></p>
+<ol type="1" start="1">
+<li>Keep all section titles and question titles distinct for easy identification in Power Automate.</li>
+</ol>
+</aside>
+<ol type="1" start="10">
+<li>In the top right hand corner, click <code>Save</code>, then <code>Flow checker</code> to ensure there are no errors, then <code>Test</code>. Select the <code>Manually</code> option, which has the instruction <em>Submit a new response to the selected form to trigger it.</em></li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/611001acfc0befe5.png"></p>
+<ol type="1" start="11">
+<li>Access the form from the form URL and submit a response. Check the excel file in OneDrive.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/35fdfb04a0d30b3f.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Sharepoint - create list from Excel" duration="0">
+        <ol type="1" start="14">
+<li>Using the <code>App Launcher</code>, launch <code>Lists</code>. If not shown in the list of Apps, click on <code>All apps</code> to see it.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/f4d7aa5d943e3f1b.png"></p>
+<ol type="1" start="15">
+<li>Using the <code>App Launcher</code>, launch <code>Lists</code>. If not shown in the list of Apps, click on <code>All apps</code> to see it.</li>
+</ol>
 
 
       </google-codelab-step>
