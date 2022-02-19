@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-02-19T02:54:07Z",
+  "id": "filterArray",
+  "duration": 0,
+  "title": "filterArray",
+  "authors": "Ryan Low",
+  "summary": "",
+  "source": "1l5LG2DEn6zUxgmOIlB5QPjURHh6PMYtoKrIOMGx6Ti0",
+  "theme": "self-help",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "Self-Help"
+  ],
+  "tags": [
+    "kiosk",
+    "web"
+  ],
+  "feedback": "mailto:ryanlow.sg@gmail.com",
+  "url": "filterArray"
+}
