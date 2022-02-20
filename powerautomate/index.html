@@ -1,0 +1,106 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Power Automate</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="powerautomate"
+                  title="Power Automate"
+                  environment="web"
+                  feedback-link="mailto:ryanlow.sg@gmail.com">
+    
+      <google-codelab-step label="FAQ" duration="0">
+        <p><strong>How do I change the trigger?</strong></p>
+<p>Delete the trigger, and choose a new trigger.</p>
+<p><strong>How do I initialize an array?</strong></p>
+<p>[&#34;a&#34;,&#34;b&#34;,&#34;c&#34;]</p>
+<p><strong>Where should I initialize my variables?</strong></p>
+<p>Just after your trigger.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Excel" duration="0">
+        <p>ODATA query does not support space in the search field (e.g. Full Name)</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SharePoint List" duration="0">
+        <p>ODATA query support spaces in the search field (e.g. Full Name is Full_x0020_Name)</p>
+<p>Use a Flow to query the SharePoint list and inspect the output to see the field names.</p>
+<p>The internal name is created at the point the SharePoint list is created</p>
+<ul>
+<li>Renaming the Title field only renames the display name, the retrieved key will still be TItle</li>
+<li>Creating a SharePoint list from Excel causes the internal name of the fields to be field_1, field_2, etc</li>
+<li>Creating a SharePoint list from a Blank list will allow setting the internal name at the point of creation</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Forms" duration="0">
+        <p>All returned values are in String.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Conversions" duration="0">
+        <p>To convert to int, use the expression int(x)</p>
+<p>To convert to float, use the expression float(x)</p>
+<p>To convert to date, use the expression formatDateTime(x, &#39;dd-MM-yyyy&#39;)</p>
+<p>To convert data to ISO 8601 formatDateTime(x, &#39;yyyy-MM-dd&#39;)</p>
+<p>Date and time format strings</p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings" target="_blank">https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Collections" duration="0">
+        <p>To get the unique values from an array x, use the expression intersection(x, x)</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Conditions" duration="0">
+        <p><a href="https://docs.microsoft.com/en-us/power-automate/use-expressions-in-conditions" target="_blank">https://docs.microsoft.com/en-us/power-automate/use-expressions-in-conditions</a></p>
+<p><code>@and(equals(item()?['Status'], 'blocked'), equals(item()?['Assigned'], 'John Wonder'))</code></p>
+<p><code>@and(empty(item()?['Status']), empty(item()?['Assigned']))</code></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Functions" duration="0">
+        <p><a href="https://docs.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference" target="_blank">https://docs.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference</a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
