@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-02-22T07:12:27Z",
+  "id": "pythonanywhere",
+  "duration": 15,
+  "title": "PythonAnywhere and Flask",
+  "authors": "Ryan Low",
+  "summary": "Setup of PythonAnywhere and Flask",
+  "source": "1rmY2sRTxin6JhxVspL_MksZ46dYBT4akIC_mKS2v47E",
+  "theme": "web",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "Web"
+  ],
+  "tags": [
+    "kiosk",
+    "web"
+  ],
+  "feedback": "mailto:ryan_low@rp.edu.sg",
+  "url": "pythonanywhere"
+}
