@@ -38,8 +38,24 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="Dates" duration="0">
+        <p>Dates must start in ISO8601 format, i.e. yyyy/MM/ddTHH:mm</p>
+<p>From there, you can use formatDateTime to get any format you want</p>
+<p><code>formatDateTime(&#39;2022-02-28T15:30&#39;,&#39;yyyy-MM-ddTHH:mm&#39;)</code></p>
+<p>At this point in time, it is not known how to display the timezone as UTC+8:00 other than just doing string concat.</p>
+<p><code>concat(outputs(&#39;Compose&#39;),&#39;+08:00&#39;)</code></p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Excel" duration="0">
         <p>ODATA query does not support space in the search field (e.g. Full Name)</p>
+<p><strong>Lookup</strong></p>
+<ol type="1" start="1">
+<li>Use Filter Query</li>
+<li>Check length <code>length(outputs(&#39;List_rows_present_in_a_table&#39;)?[&#39;body/value&#39;])</code></li>
+<li>Retrieve value from column</li>
+</ol>
 
 
       </google-codelab-step>
@@ -74,6 +90,12 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="Data Operations" duration="0">
+        <p><a href="https://docs.microsoft.com/en-us/power-automate/data-operations" target="_blank">https://docs.microsoft.com/en-us/power-automate/data-operations</a></p>
+
+
+      </google-codelab-step>
+    
       <google-codelab-step label="Collections" duration="0">
         <p>To get the unique values from an array x, use the expression intersection(x, x)</p>
 
@@ -82,8 +104,8 @@
     
       <google-codelab-step label="Conditions" duration="0">
         <p><a href="https://docs.microsoft.com/en-us/power-automate/use-expressions-in-conditions" target="_blank">https://docs.microsoft.com/en-us/power-automate/use-expressions-in-conditions</a></p>
-<p><code>@and(equals(item()?['Status'], 'blocked'), equals(item()?['Assigned'], 'John Wonder'))</code></p>
-<p><code>@and(empty(item()?['Status']), empty(item()?['Assigned']))</code></p>
+<p><code>@and(equals(item()?[&#39;Status&#39;], &#39;blocked&#39;), equals(item()?[&#39;Assigned&#39;], &#39;John Wonder&#39;))</code></p>
+<p><code>@and(empty(item()?[&#39;Status&#39;]), empty(item()?[&#39;Assigned&#39;]))</code></p>
 
 
       </google-codelab-step>
