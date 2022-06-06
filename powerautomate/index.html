@@ -116,6 +116,41 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="Use case - Sharepoint filter query on lookup field" duration="0">
+        <p><a href="https://tomriha.com/power-automate-filter-on-sharepoint-lookup-column/" target="_blank">https://tomriha.com/power-automate-filter-on-sharepoint-lookup-column/</a></p>
+<ul>
+<li>Lookup/Title eq &#39;Value&#39;</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Use case - Form attachment, move in OneDrive" duration="0">
+        <ul>
+<li>Example, there are 3 file upload buttons on the form</li>
+<li>Add an action <strong>Get response details</strong> and check the returned json; look for the keys for the file upload questions</li>
+</ul>
+<pre><code>{
+  &#34;responder&#34;: &#34;ryan_low@rp.edu.sg&#34;,
+  &#34;submitDate&#34;: &#34;6/6/2022 1:10:37 PM&#34;,
+  &#34;r7e1b4e7bc71c431f912095f8e796a239&#34;: &#34;[{\&#34;name\&#34;:\&#34;01_Choon Hong Ryan Low.pdf\&#34;,\&#34;link\&#34;:\&#34;https://myrp-my.sharepoint.com/personal/ryan_low_rp_edu_sg/Documents/Apps/Microsoft%20Forms/Submit%20File/Question/01_Choon%20Hong%20Ryan%20Low.pdf\&#34;,\&#34;id\&#34;:\&#34;01SKY6STX7J2WIYU7KOFFZTFFG32DGODHV\&#34;,\&#34;type\&#34;:null,\&#34;size\&#34;:21493,\&#34;referenceId\&#34;:\&#34;01SKY6STTVAEE5ZXF5CVFZORZOLCAOGSO4\&#34;,\&#34;driveId\&#34;:\&#34;b!1Knriq0PZkanyaJj-Aim72etb6CtqiBGrxcxXRL1E0wm-VRz5L78T7RvL_23Qrma\&#34;,\&#34;status\&#34;:1,\&#34;uploadSessionUrl\&#34;:null}]&#34;,
+  &#34;rdd6bd149a2c44d21a1adfc395db09995&#34;: &#34;[{\&#34;name\&#34;:\&#34;01_Choon Hong Ryan Low.pdf\&#34;,\&#34;link\&#34;:\&#34;https://myrp-my.sharepoint.com/personal/ryan_low_rp_edu_sg/Documents/Apps/Microsoft%20Forms/Submit%20File/Question%201/01_Choon%20Hong%20Ryan%20Low.pdf\&#34;,\&#34;id\&#34;:\&#34;01SKY6STXRF7WW2W5K6VGKDQHPZRMAVHH3\&#34;,\&#34;type\&#34;:null,\&#34;size\&#34;:21493,\&#34;referenceId\&#34;:\&#34;01SKY6STSPYGPHGLDFR5EJ6J5KIOOGBKVW\&#34;,\&#34;driveId\&#34;:\&#34;b!1Knriq0PZkanyaJj-Aim72etb6CtqiBGrxcxXRL1E0wm-VRz5L78T7RvL_23Qrma\&#34;,\&#34;status\&#34;:1,\&#34;uploadSessionUrl\&#34;:null}]&#34;,
+  &#34;r57b2877d10fd417c9f3ca1fc3cdd61ec&#34;: &#34;[{\&#34;name\&#34;:\&#34;01_Choon Hong Ryan Low.pdf\&#34;,\&#34;link\&#34;:\&#34;https://myrp-my.sharepoint.com/personal/ryan_low_rp_edu_sg/Documents/Apps/Microsoft%20Forms/Submit%20File/Question%202/01_Choon%20Hong%20Ryan%20Low.pdf\&#34;,\&#34;id\&#34;:\&#34;01SKY6STUTOYNU52MLUBGJLQ27BNCBX2BX\&#34;,\&#34;type\&#34;:null,\&#34;size\&#34;:21493,\&#34;referenceId\&#34;:\&#34;01SKY6STU57NJNMIYGR5BYUJWVSKIJX2J3\&#34;,\&#34;driveId\&#34;:\&#34;b!1Knriq0PZkanyaJj-Aim72etb6CtqiBGrxcxXRL1E0wm-VRz5L78T7RvL_23Qrma\&#34;,\&#34;status\&#34;:1,\&#34;uploadSessionUrl\&#34;:null}]&#34;
+}</code></pre>
+<ul>
+<li>Add an action <strong>Move or rename file</strong> and set the file identifier as</li>
+</ul>
+<pre><code>json(outputs(&#39;Get_response_details&#39;)?[&#39;body/r7e1b4e7bc71c431f912095f8e796a239&#39;])[0]?[&#39;id&#39;]</code></pre>
+<ul>
+<li>The 3 file identifiers are:</li>
+</ul>
+<pre><code>json(outputs(&#39;Get_response_details&#39;)?[&#39;body/r7e1b4e7bc71c431f912095f8e796a239&#39;])[0]?[&#39;id&#39;]
+json(outputs(&#39;Get_response_details&#39;)?[&#39;body/rdd6bd149a2c44d21a1adfc395db09995&#39;])[0]?[&#39;id&#39;]
+json(outputs(&#39;Get_response_details&#39;)?[&#39;body/r57b2877d10fd417c9f3ca1fc3cdd61ec&#39;])[0]?[&#39;id&#39;]</code></pre>
+
+
+      </google-codelab-step>
+    
   </google-codelab>
 
   <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
