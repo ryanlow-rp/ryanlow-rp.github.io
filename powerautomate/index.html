@@ -273,6 +273,35 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="Use case - SharePoint List update lookup field" duration="0">
+        <p>Lookup List</p>
+<p class="image-container"><img style="width: 1103.32px" src="img/8da12504914c1b88.png"></p>
+<p>List which uses a lookup</p>
+<p class="image-container"><img style="width: 1103.32px" src="img/1d86988307b7e7e7.png"></p>
+<ol type="1" start="1">
+<li>Initialize an <strong>Integer</strong> variable to hold the lookup list item ID</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/fcf55032a1838bd4.png"></p>
+<ol type="1" start="2">
+<li>Use SharePoint&#39;s <strong>Get Items</strong> action to look for the desired item from the lookup list by using an appropriate Filter Query and a Top Count of 1</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/b1061988ece8bfc8.png"></p>
+<ol type="1" start="3">
+<li>The returned lookup list items is an array with one element. Save the ID of that element.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/ebcf6561853b17ec.png"></p>
+<ol type="1" start="4">
+<li>Use SharePoint&#39;s <strong>Get Items</strong> action to look for the desired list item(s) to update. Use an appropriate Filter Query as necessary.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/4efc1679673cf8b1.png"></p>
+<ol type="1" start="5">
+<li>Use SharePoint&#39;s <strong>Update Item</strong> action to update the desired list item(s) with the value of the <strong>Integer</strong> variable holding the lookup list item ID.</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/4aa622060d8788f1.png"></p>
+
+
+      </google-codelab-step>
+    
   </google-codelab>
 
   <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
