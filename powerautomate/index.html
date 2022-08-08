@@ -30,10 +30,10 @@
       <google-codelab-step label="FAQ" duration="0">
         <p><strong>How do I change the trigger?</strong></p>
 <p>Delete the trigger, and choose a new trigger.</p>
-<p><strong>How do I initialize an array?</strong></p>
-<p>[&#34;a&#34;,&#34;b&#34;,&#34;c&#34;]</p>
 <p><strong>Where should I initialize my variables?</strong></p>
 <p>Just after your trigger.</p>
+<p><strong>How do I initialize an array?</strong></p>
+<p>[&#34;a&#34;,&#34;b&#34;,&#34;c&#34;]</p>
 
 
       </google-codelab-step>
@@ -69,11 +69,17 @@
 <li>Creating a SharePoint list from Excel causes the internal name of the fields to be field_1, field_2, etc</li>
 <li>Creating a SharePoint list from a Blank list will allow setting the internal name at the point of creation</li>
 </ul>
+<p><strong>Default limit on return count</strong></p>
 <p>SharePoint lists have a default maximum return count of 100. For larger lists, set the Top Count value to a higher value (maximum is 5000).</p>
 <p><a href="https://www.tachytelic.net/2020/04/get-more-5000-items-sharepoint-power-automate/" target="_blank">https://www.tachytelic.net/2020/04/get-more-5000-items-sharepoint-power-automate/</a></p>
+<p><a href="https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/working-with-get-items-and-get-files" target="_blank">https://docs.microsoft.com/en-us/sharepoint/dev/business-apps/power-automate/guidance/working-with-get-items-and-get-files</a></p>
 <p><strong>ODATA query for Yes / No</strong></p>
 <p><a href="https://powerusers.microsoft.com/t5/Building-Flows/Filter-a-query-by-Yes-No-column-not-working/td-p/453120" target="_blank">https://powerusers.microsoft.com/t5/Building-Flows/Filter-a-query-by-Yes-No-column-not-working/td-p/453120</a></p>
 <p>Based on this article, 1 is true and &#39;No&#39; is false</p>
+<p><strong>Filter query for Person column in Sharepoint</strong></p>
+<p>staffName/EMail eq &#39;staffname@yourdomain.com&#39;</p>
+<p><strong>List of formulas supported by SharePoint List</strong></p>
+<p><a href="https://support.microsoft.com/en-us/office/examples-of-common-formulas-in-lists-d81f5f21-2b4e-45ce-b170-bf7ebf6988b3" target="_blank">https://support.microsoft.com/en-us/office/examples-of-common-formulas-in-lists-d81f5f21-2b4e-45ce-b170-bf7ebf6988b3</a> </p>
 
 
       </google-codelab-step>
@@ -121,37 +127,148 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Use case - Sharepoint filter query on lookup field" duration="0">
-        <p><a href="https://tomriha.com/power-automate-filter-on-sharepoint-lookup-column/" target="_blank">https://tomriha.com/power-automate-filter-on-sharepoint-lookup-column/</a></p>
+      <google-codelab-step label="Working with dates and times" duration="0">
+        <h2 is-upgraded>Best practices for SharePoint List</h2>
+<aside class="warning"><p>DateTime values from SharePoint List have timezone information</p>
+</aside>
 <ul>
-<li>Lookup/Title eq &#39;Value&#39;</li>
+<li>Store DateTime values as UTC values</li>
+<li>Change the time zone setting in SharePoint List to view the DateTime values with the preferred time zone</li>
 </ul>
+<aside class="special"><p><strong>To change the Time Zone setting for date fields in SharePoint List</strong></p>
+<ol type="1" start="1">
+<li>Go to OneDrive</li>
+<li>Go to Settings, OneDrive settings, More Settings, Regional Settings</li>
+<li>Change the Time Zone to your preferred timezone, e.g. (UTC+08:00) Kuala Lumpur, Singapore</li>
+</ol>
+</aside>
+<h2 is-upgraded>Best practices for Excel</h2>
+<aside class="warning"><p>DateTime values from Excel do not have timezone information</p>
+</aside>
+<p><strong>Inserting dates</strong></p>
+<ul>
+<li>When using the <strong>Convert time zone</strong> action, set the format string as <code>MM/dd/yy HH:mm</code> (follow the format that Excel requires)</li>
+</ul>
+<p><strong>Retrieving dates</strong></p>
+<ul>
+<li>When using the <strong>List rows present in a table</strong> action, set the <strong>DateTime Format</strong> to <strong>ISO 8601</strong></li>
+</ul>
+<p><strong>Approach #1 - Comparing date time values</strong></p>
+<ul>
+<li>Assume: DateTime values in Excel are based on (UTC+08:00) Kuala Lumpur, Singapore</li>
+<li>For the <strong>Convert time zone</strong> action, set the format string as <code>yyyy-MM-ddTHH:mm:ss</code></li>
+<li>Use <strong>Convert time zone</strong> action to convert <code>utcNow()</code> to Singapore time then compare this with the Excel value</li>
+</ul>
+<p class="image-container"><img style="width: 1103.32px" src="img/a0d39b1c066afe4d.png"></p>
+<p><strong>Approach #2 - Comparing date time values</strong></p>
+<ul>
+<li>Assume: DateTime values in Excel are based on (UTC+08:00) Kuala Lumpur, Singapore</li>
+<li>For the <strong>Convert time zone</strong> action, set the format string as <code>yyyy-MM-ddTHH:mm:ss</code></li>
+<li>Use <strong>Convert time zone</strong> action to add time zone information</li>
+<li>Use <strong>Convert time zone</strong> action to convert to UTC time then compare this with <code>utcNow()</code></li>
+</ul>
+<p class="image-container"><img style="width: 1103.32px" src="img/79400170560a2ac2.png"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Use case - Form attachment, move in OneDrive" duration="0">
+      <google-codelab-step label="Use case - Dealing with MS Form attachments" duration="0">
         <ul>
-<li>Example, there are 3 file upload buttons on the form</li>
-<li>Add an action <strong>Get response details</strong> and check the returned json; look for the keys for the file upload questions</li>
+<li>Create an <strong>Upload File</strong> question</li>
+</ul>
+<p class="image-container"><img style="width: 1103.32px" src="img/cc5be82b01e515d6.png"></p>
+<ul>
+<li>Trigger action <strong>When a new response is submitted</strong></li>
+<li>Add an action <strong>Get response details</strong></li>
+<li>Add a <strong>Parse JSON</strong> action to parse the value of that question with the schema given below</li>
 </ul>
 <pre><code>{
-  &#34;responder&#34;: &#34;ryan_low@rp.edu.sg&#34;,
-  &#34;submitDate&#34;: &#34;6/6/2022 1:10:37 PM&#34;,
-  &#34;r7e1b4e7bc71c431f912095f8e796a239&#34;: &#34;[{\&#34;name\&#34;:\&#34;01_Choon Hong Ryan Low.pdf\&#34;,\&#34;link\&#34;:\&#34;https://myrp-my.sharepoint.com/personal/ryan_low_rp_edu_sg/Documents/Apps/Microsoft%20Forms/Submit%20File/Question/01_Choon%20Hong%20Ryan%20Low.pdf\&#34;,\&#34;id\&#34;:\&#34;01SKY6STX7J2WIYU7KOFFZTFFG32DGODHV\&#34;,\&#34;type\&#34;:null,\&#34;size\&#34;:21493,\&#34;referenceId\&#34;:\&#34;01SKY6STTVAEE5ZXF5CVFZORZOLCAOGSO4\&#34;,\&#34;driveId\&#34;:\&#34;b!1Knriq0PZkanyaJj-Aim72etb6CtqiBGrxcxXRL1E0wm-VRz5L78T7RvL_23Qrma\&#34;,\&#34;status\&#34;:1,\&#34;uploadSessionUrl\&#34;:null}]&#34;,
-  &#34;rdd6bd149a2c44d21a1adfc395db09995&#34;: &#34;[{\&#34;name\&#34;:\&#34;01_Choon Hong Ryan Low.pdf\&#34;,\&#34;link\&#34;:\&#34;https://myrp-my.sharepoint.com/personal/ryan_low_rp_edu_sg/Documents/Apps/Microsoft%20Forms/Submit%20File/Question%201/01_Choon%20Hong%20Ryan%20Low.pdf\&#34;,\&#34;id\&#34;:\&#34;01SKY6STXRF7WW2W5K6VGKDQHPZRMAVHH3\&#34;,\&#34;type\&#34;:null,\&#34;size\&#34;:21493,\&#34;referenceId\&#34;:\&#34;01SKY6STSPYGPHGLDFR5EJ6J5KIOOGBKVW\&#34;,\&#34;driveId\&#34;:\&#34;b!1Knriq0PZkanyaJj-Aim72etb6CtqiBGrxcxXRL1E0wm-VRz5L78T7RvL_23Qrma\&#34;,\&#34;status\&#34;:1,\&#34;uploadSessionUrl\&#34;:null}]&#34;,
-  &#34;r57b2877d10fd417c9f3ca1fc3cdd61ec&#34;: &#34;[{\&#34;name\&#34;:\&#34;01_Choon Hong Ryan Low.pdf\&#34;,\&#34;link\&#34;:\&#34;https://myrp-my.sharepoint.com/personal/ryan_low_rp_edu_sg/Documents/Apps/Microsoft%20Forms/Submit%20File/Question%202/01_Choon%20Hong%20Ryan%20Low.pdf\&#34;,\&#34;id\&#34;:\&#34;01SKY6STUTOYNU52MLUBGJLQ27BNCBX2BX\&#34;,\&#34;type\&#34;:null,\&#34;size\&#34;:21493,\&#34;referenceId\&#34;:\&#34;01SKY6STU57NJNMIYGR5BYUJWVSKIJX2J3\&#34;,\&#34;driveId\&#34;:\&#34;b!1Knriq0PZkanyaJj-Aim72etb6CtqiBGrxcxXRL1E0wm-VRz5L78T7RvL_23Qrma\&#34;,\&#34;status\&#34;:1,\&#34;uploadSessionUrl\&#34;:null}]&#34;
+   &#34;type&#34;: &#34;array&#34;,
+   &#34;items&#34;: {
+       &#34;type&#34;: &#34;object&#34;,
+       &#34;properties&#34;: {
+           &#34;name&#34;: {
+               &#34;type&#34;: &#34;string&#34;
+           },
+           &#34;link&#34;: {
+               &#34;type&#34;: &#34;string&#34;
+           },
+           &#34;id&#34;: {
+               &#34;type&#34;: &#34;string&#34;
+           },
+           &#34;type&#34;: {},
+           &#34;size&#34;: {
+               &#34;type&#34;: &#34;integer&#34;
+           },
+           &#34;referenceId&#34;: {
+               &#34;type&#34;: &#34;string&#34;
+           },
+           &#34;driveId&#34;: {
+               &#34;type&#34;: &#34;string&#34;
+           },
+           &#34;status&#34;: {
+               &#34;type&#34;: &#34;integer&#34;
+           },
+           &#34;uploadSessionUrl&#34;: {}
+       },
+       &#34;required&#34;: [
+           &#34;name&#34;,
+           &#34;link&#34;,
+           &#34;id&#34;,
+           &#34;type&#34;,
+           &#34;size&#34;,
+           &#34;referenceId&#34;,
+           &#34;driveId&#34;,
+           &#34;status&#34;,
+           &#34;uploadSessionUrl&#34;
+       ]
+   }
 }</code></pre>
+<aside class="warning"><p>The schema is based off the json for the question response</p>
+</aside>
 <ul>
-<li>Add an action <strong>Move or rename file</strong> and set the file identifier as</li>
+<li>Add an <strong>Apply to each</strong> action for the <code>Body</code> field from the Parse JSON action</li>
 </ul>
-<pre><code>json(outputs(&#39;Get_response_details&#39;)?[&#39;body/r7e1b4e7bc71c431f912095f8e796a239&#39;])[0]?[&#39;id&#39;]</code></pre>
+<p class="image-container"><img style="width: 1103.32px" src="img/6eb7fddea669f2f.png"></p>
 <ul>
-<li>The 3 file identifiers are:</li>
+<li>Subsequent actions can access the fields from the Parse JSON action, such as those shown in the table below. In the screenshot above, the Compose action is there for illustration purposes only.</li>
 </ul>
-<pre><code>json(outputs(&#39;Get_response_details&#39;)?[&#39;body/r7e1b4e7bc71c431f912095f8e796a239&#39;])[0]?[&#39;id&#39;]
-json(outputs(&#39;Get_response_details&#39;)?[&#39;body/rdd6bd149a2c44d21a1adfc395db09995&#39;])[0]?[&#39;id&#39;]
-json(outputs(&#39;Get_response_details&#39;)?[&#39;body/r57b2877d10fd417c9f3ca1fc3cdd61ec&#39;])[0]?[&#39;id&#39;]</code></pre>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Field</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Description</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>name</p>
+</td><td colspan="1" rowspan="1"><p>Attachment name</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>link</p>
+</td><td colspan="1" rowspan="1"><p>URL to attachment</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>id</p>
+</td><td colspan="1" rowspan="1"><p>File id</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>size</p>
+</td><td colspan="1" rowspan="1"><p>File size</p>
+</td></tr>
+</table>
+<ul>
+<li>To get the attachment content, use OneDrive&#39;s <strong>Get file content</strong> action with the file id. The screenshot below shows creating a new file from the file content, but we could just as easily create an attachment for an email.</li>
+</ul>
+<p class="image-container"><img style="width: 1103.32px" src="img/67f6df89e3fefb82.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Use case - SharePoint List filter query on lookup field" duration="0">
+        <p><a href="https://tomriha.com/power-automate-filter-on-sharepoint-lookup-column/" target="_blank">https://tomriha.com/power-automate-filter-on-sharepoint-lookup-column/</a></p>
+<p>Lookup List</p>
+<p class="image-container"><img style="width: 1103.32px" src="img/8da12504914c1b88.png"></p>
+<p>List which uses a lookup</p>
+<p class="image-container"><img style="width: 1103.32px" src="img/1d86988307b7e7e7.png"></p>
+<p>SharePoint List filter query on lookup field</p>
+<ul>
+<li>Lookup/Title eq &#39;Value&#39;</li>
+</ul>
+<p class="image-container"><img style="width: 1103.32px" src="img/7cb1a1e977dd6811.png"></p>
 
 
       </google-codelab-step>
