@@ -9,7 +9,7 @@
   <title>Power Automate</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
   <style>
     .success {
       color: #1e8e3e;
@@ -41,9 +41,9 @@
       <google-codelab-step label="Dates" duration="0">
         <p>Dates must start in ISO8601 format, i.e. yyyy/MM/ddTHH:mm</p>
 <p>From there, you can use formatDateTime to get any format you want</p>
-<p><code>formatDateTime(&#39;2022-02-28T15:30&#39;,&#39;yyyy-MM-ddTHH:mm&#39;)</code></p>
+<p><code>formatDateTime('2022-02-28T15:30','yyyy-MM-ddTHH:mm')</code></p>
 <p>At this point in time, it is not known how to display the timezone as UTC+8:00 other than just doing string concat.</p>
-<p><code>concat(outputs(&#39;Compose&#39;),&#39;+08:00&#39;)</code></p>
+<p><code>concat(outputs('Compose'),'+08:00')</code></p>
 
 
       </google-codelab-step>
@@ -53,7 +53,7 @@
 <p><strong>Lookup</strong></p>
 <ol type="1" start="1">
 <li>Use Filter Query</li>
-<li>Check length <code>length(outputs(&#39;List_rows_present_in_a_table&#39;)?[&#39;body/value&#39;])</code></li>
+<li>Check length <code>length(outputs('List_rows_present_in_a_table')?['body/value'])</code></li>
 <li>Retrieve value from column</li>
 </ol>
 
@@ -115,8 +115,8 @@
     
       <google-codelab-step label="Conditions" duration="0">
         <p><a href="https://docs.microsoft.com/en-us/power-automate/use-expressions-in-conditions" target="_blank">https://docs.microsoft.com/en-us/power-automate/use-expressions-in-conditions</a></p>
-<p><code>@and(equals(item()?[&#39;Status&#39;], &#39;blocked&#39;), equals(item()?[&#39;Assigned&#39;], &#39;John Wonder&#39;))</code></p>
-<p><code>@and(empty(item()?[&#39;Status&#39;]), empty(item()?[&#39;Assigned&#39;]))</code></p>
+<p><code>@and(equals(item()?['Status'], 'blocked'), equals(item()?['Assigned'], 'John Wonder'))</code></p>
+<p><code>@and(empty(item()?['Status']), empty(item()?['Assigned']))</code></p>
 
 
       </google-codelab-step>
@@ -182,6 +182,7 @@
 <li>Add an action <strong>Get response details</strong></li>
 <li>Add a <strong>Parse JSON</strong> action to parse the value of that question with the schema given below</li>
 </ul>
+<p class="image-container"><img style="width: 1103.32px" src="img/1f7c13b20ee22892.png"></p>
 <pre><code>{
    &#34;type&#34;: &#34;array&#34;,
    &#34;items&#34;: {
@@ -227,15 +228,14 @@
 <aside class="warning"><p>The schema is based off the json for the question response</p>
 </aside>
 <ul>
-<li>Add an <strong>Apply to each</strong> action for the <code>Body</code> field from the Parse JSON action</li>
-</ul>
-<p class="image-container"><img style="width: 1103.32px" src="img/6eb7fddea669f2f.png"></p>
-<ul>
-<li>Subsequent actions can access the fields from the Parse JSON action, such as those shown in the table below. In the screenshot above, the Compose action is there for illustration purposes only.</li>
+<li>Add an <strong>Apply to each</strong> action for the <code>Body</code> field from the Parse JSON action. Actions in the <strong>Apply to each</strong> action can access the fields from the Parse JSON action, such as those shown in the table below. For example, OneDrive&#39;s <strong>Get file content</strong> action using the id field from the Parse JSON action.</li>
 </ul>
 <table>
 <tr><td colspan="1" rowspan="1"><p><strong>Field</strong></p>
 </td><td colspan="1" rowspan="1"><p><strong>Description</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>id</p>
+</td><td colspan="1" rowspan="1"><p>File id</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>name</p>
 </td><td colspan="1" rowspan="1"><p>Attachment name</p>
@@ -243,17 +243,11 @@
 <tr><td colspan="1" rowspan="1"><p>link</p>
 </td><td colspan="1" rowspan="1"><p>URL to attachment</p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p>id</p>
-</td><td colspan="1" rowspan="1"><p>File id</p>
-</td></tr>
 <tr><td colspan="1" rowspan="1"><p>size</p>
 </td><td colspan="1" rowspan="1"><p>File size</p>
 </td></tr>
 </table>
-<ul>
-<li>To get the attachment content, use OneDrive&#39;s <strong>Get file content</strong> action with the file id. The screenshot below shows creating a new file from the file content, but we could just as easily create an attachment for an email.</li>
-</ul>
-<p class="image-container"><img style="width: 1103.32px" src="img/67f6df89e3fefb82.png"></p>
+<p class="image-container"><img style="width: 1103.32px" src="img/8beff19439c67351.png"></p>
 
 
       </google-codelab-step>
@@ -302,12 +296,78 @@
 
       </google-codelab-step>
     
+      <google-codelab-step label="Use case - Creating HTML table from raw data" duration="0">
+        <ol type="1" start="1">
+<li>Initialize an array variable with the table data in JSON format</li>
+</ol>
+<pre>[
+  {
+    &#34;column1&#34;:&#34;data1&#34;,
+    &#34;column2&#34;:&#34;row1&#34;
+  },
+  {
+    &#34;column1&#34;:&#34;data2&#34;,
+    &#34;column2&#34;:&#34;row2&#34;
+  },
+  {
+    &#34;column1&#34;:&#34;data3&#34;,
+    &#34;column2&#34;:&#34;row3&#34;
+  }
+]</pre>
+<p class="image-container"><img style="width: 1103.32px" src="img/1a44b25dcfe63253.png"></p>
+<ol type="1" start="2">
+<li>Use <code>Create HTML table</code> action on the array</li>
+</ol>
+<p class="image-container"><img style="width: 1103.32px" src="img/3fa30f540725d7cc.png"></p>
+<ol type="1" start="3">
+<li>Use <code>Compose</code> action to prepend CSS to output of <code>Create HTML table</code> (styling resource at <a href="https://codebeautify.org/html-table-generator" target="_blank">https://codebeautify.org/html-table-generator</a>)</li>
+</ol>
+<pre>&lt;style&gt;
+table {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table td, table th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table tbody td {
+  font-size: 13px;
+}
+table thead {
+  background: #1C6EA4;
+  border-bottom: 2px solid #444444;
+}
+table thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table thead th:first-child {
+  border-left: none;
+}
+&lt;/style&gt;</pre>
+<p class="image-container"><img style="width: 1103.32px" src="img/83fb66e13417bfed.png"></p>
+<ol type="1" start="4">
+<li>Output of <code>Compose</code> action is the styled HTML table which can be sent in an email. Note that it will not render properly in an approval action.</li>
+</ol>
+<aside class="warning"><p>Data from Excel or Sharepoint List can similarly be rendered into a HTML table</p>
+<p class="image-container"><img style="width: 1089.00px" src="img/e97f8efeef557203.png"></p>
+</aside>
+
+
+      </google-codelab-step>
+    
   </google-codelab>
 
-  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
-  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
-  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
-  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
   <script src="//support.google.com/inapp/api.js"></script>
 
 </body>
