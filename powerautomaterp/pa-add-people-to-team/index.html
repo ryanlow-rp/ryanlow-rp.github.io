@@ -28,43 +28,46 @@
                   feedback-link="">
     
       <google-codelab-step label="Introduction" duration="0">
+        <p><strong>Last Updated:</strong> 2024-04-27</p>
+<h2 is-upgraded><strong>What you&#39;ll build</strong></h2>
+<p>In this codelab, you will create an instant cloud flow.</p>
+<p>The flow will add a list of people to a Microsoft Team</p>
+<p>The list will come from an Excel file </p>
+<h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
+<ul class="checklist">
+<li>How to create an instant cloud flow</li>
+<li>How to use Power Automate actions</li>
+</ul>
+<h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
+<ul>
+<li>A web browser</li>
+<li>Ability to create a Microsoft Team</li>
+<li>Access to Teams, OneDrive, Power Automate</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Core concepts" duration="3">
         <p><a href="https://www.microsoft.com/en-sg/power-platform/products/power-automate" target="_blank">https://www.microsoft.com/en-sg/power-platform/products/power-automate</a></p>
-<p><strong>Last Updated:</strong> 2024-04-27</p>
-<h2 is-upgraded><strong>Core Concepts</strong></h2>
-<p>A Power Automate flow consists of 1 trigger and 1 or more actions</p>
+<p>A Power Automate flow consists of 1 <strong>trigger</strong> and 1 or more <strong>actions</strong></p>
 <ul>
 <li>Instant cloud flow - triggered manually</li>
 <li>Automated cloud flow - triggered by a connector</li>
 <li>Scheduled cloud flow - triggered based on a predetermined schedule</li>
 </ul>
 <h3 is-upgraded><strong>Connector</strong></h3>
-<p>Connectors serve as the bridge between Power Automate and external services</p>
+<p><strong>Connectors</strong> serve as the bridge between Power Automate and external services</p>
 <p>Connectors offer triggers and actions:</p>
 <ul>
 <li>Triggers - Events that start a workflow</li>
 <li>Actions - Tasks carried out once a workflow has started</li>
 </ul>
-<h2 is-upgraded><strong>What you&#39;ll build</strong></h2>
-<p>In this codelab, you will create an instant cloud flow.</p>
-<p>The flow will add people from a list of email addresses in an Excel file to a Microsoft Team</p>
-<aside class="warning"><p><strong>Note : </strong></p>
-</aside>
-<h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
-<ul class="checklist">
-<li>How to create an instant cloud flow</li>
-<li>How to read from an Excel file</li>
-<li>How to use actions</li>
-</ul>
-<h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
-<ul>
-<li>A web browser</li>
-<li>Access to Power Automate, OneDrive<br></li>
-</ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create the Microsoft Team" duration="2">
+      <google-codelab-step label="Create the Microsoft Team" duration="3">
         <ol type="1" start="1">
 <li>Launch Microsoft Teams and click <code>Teams</code></li>
 <li>Click <code>Join or create team</code></li>
@@ -93,7 +96,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create the Microsoft Excel file" duration="2">
+      <google-codelab-step label="Create the Microsoft Excel file" duration="3">
         <ol type="1" start="1">
 <li>Launch Microsoft OneDrive</li>
 <li>Create a folder <code>PowerAutomateRP</code></li>
@@ -122,7 +125,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Create the instant cloud flow (Part 1)" duration="2">
+      <google-codelab-step label="Create the instant cloud flow" duration="11">
         <ol type="1" start="1">
 <li>Launch Microsoft Power Automate</li>
 </ol>
@@ -173,6 +176,7 @@
 </td></tr>
 </table>
 <p class="image-container"><img style="width: 2048.00px" src="img/21ac903082092d1c.png"></p>
+<h2 is-upgraded><strong>Save and test the flow</strong></h2>
 <ol type="1" start="11">
 <li>Click <code>Save</code></li>
 <li>Click <code>Test</code></li>
@@ -191,43 +195,55 @@
 <li>Click <code>Run flow</code></li>
 </ol>
 <p class="image-container"><img style="width: 2048.00px" src="img/7069a384fc220283.png"></p>
+<h2 is-upgraded><strong>View run result</strong></h2>
 <ol type="1" start="17">
 <li>Click on <code>List rows present in a table</code> to expand the action</li>
 <li>Under <strong>OUTPUTS</strong>, click on <code>Click to download</code></li>
 </ol>
 <p class="image-container"><img style="width: 2048.00px" src="img/d73833f646b9b96e.png"></p>
 <ol type="1" start="19">
-<li>The action generated JSON containing the data from the Excel file</li>
+<li>The <code>List rows present in a table</code> action generated JSON containing the data from the Excel file</li>
 </ol>
 <p class="image-container"><img style="width: 2048.00px" src="img/89c64c75e7f7698b.png"></p>
-<aside class="special"><p>Remember that JSON is just a series of key-value pairs</p>
-<p>Looking at the JSON, we are interested in the key called <strong>value</strong></p>
+<aside class="special"><p>JSON objects consist of key-value pairs</p>
+<p>We are interested in the key called <strong>value</strong></p>
 <p>The corresponding value for that key is an array containing the data from the excel file</p>
-<p>Bear that in mind as we head into the next section</p>
 </aside>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Create the instant cloud flow (Part 2)" duration="2">
-        <ol type="1" start="1">
-<li>Launch Microsoft Power Automate</li>
+<ol type="1" start="20">
+<li>Click <code>Edit</code> to resume editing the flow</li>
 </ol>
-<h2 is-upgraded><strong>Create the flow</strong></h2>
-<ol type="1" start="2">
-<li>Click <code>Create</code></li>
-<li>Click <code>Instant cloud flow</code></li>
+<p class="image-container"><img style="width: 2048.00px" src="img/d73833f646b9b96e.png"></p>
+<h2 is-upgraded><strong>Add person to Team</strong></h2>
+<ol type="1" start="21">
+<li>Add an action <code>Add a member to a team</code></li>
+<li>For Team, select the team you created earlier</li>
+<li>Click on the text field for the user principal name to add. The Dynamic content dialog will appear. Click on <code>email</code>.</li>
 </ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/c72169e3902e928e.png"></p>
+<ol type="1" start="24">
+<li>The <code>Add a member to a team</code> action is automatically enclosed in an <code>Apply to each</code>, which iterates over <code>value</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/e5ffe9ab9c6f5fcc.png"></p>
+<aside class="special"><p>The dynamic content <code>value</code> from <code>List rows present in a table</code> is an array</p>
+<p>The apply to each iterates over the array</p>
+<p>For each iteration, we extract the value of email and add that email to the Team</p>
+</aside>
+<h2 is-upgraded><strong>Run the flow</strong></h2>
+<ol type="1" start="25">
+<li>Save and test the flow. The Team should have the newly added members.</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/4fbe0f9315adceb3.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Congratulations" duration="0">
-        <p>Congratulations, </p>
-<h2 is-upgraded><strong>What&#39;s next?</strong></h2>
-<p>Check out some of these codelabs...</p>
-<h2 is-upgraded><strong>Further reading</strong></h2>
-<h2 is-upgraded><strong>Reference docs</strong></h2>
+        <p>Congratulations, you created your first instant cloud flow</p>
+<p>Actions used:</p>
+<ul>
+<li>Connector : Excel Online (Business), action : List rows present in a table </li>
+<li>Connector : Microsoft Teams, action : Add a member to a team</li>
+</ul>
 
 
       </google-codelab-step>

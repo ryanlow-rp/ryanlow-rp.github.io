@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-04-27T11:33:29Z",
+  "id": "pa-collect-form-responses",
+  "duration": 17,
+  "title": "Power Automate - Collect form response",
+  "authors": "Ryan Low",
+  "summary": "In this codelab, you'll use Power Automate to collect form responses",
+  "source": "1GzNN76QH1OKIIMxdzfbrV5404Plurl9eBEMbpxftvaY",
+  "theme": "powerautomate",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "powerautomate"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "pa-collect-form-responses"
+}

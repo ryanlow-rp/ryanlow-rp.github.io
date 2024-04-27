@@ -1,0 +1,204 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Power Automate - Collect form response</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="pa-collect-form-responses"
+                  title="Power Automate - Collect form response"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p><strong>Last Updated:</strong> 2024-04-27</p>
+<h2 is-upgraded><strong>What you&#39;ll build</strong></h2>
+<p>In this codelab, you will create an automated cloud flow.</p>
+<p>The flow will trigger when a form is submitted.</p>
+<p>The flow will collect responses from the form and save the responses to an Excel file</p>
+<h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
+<ul class="checklist">
+<li>How to create an automated cloud flow</li>
+<li>How to create a simple form</li>
+<li>How to read Form response</li>
+<li>How to write to Excel</li>
+</ul>
+<h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
+<ul>
+<li>A web browser</li>
+<li>Access to Forms, OneDrive, Power Automate</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create the Microsoft Excel file" duration="3">
+        <ol type="1" start="1">
+<li>Launch Microsoft OneDrive</li>
+<li>In the folder <code>PowerAutomateRP</code>, create a file <code>responses.xlsx</code></li>
+<li>Set cell A1 as <code>email</code></li>
+<li>Set cell A2 as <code>response</code></li>
+<li>Click on cell A1</li>
+<li>Click on <code>Format As Table</code> and choose a style</li>
+<li>Check the range of cells to be formatted as a table is correct</li>
+<li>Ensure that <code>My table has headers</code> is checked</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/f9f712e5337b6796.png"></p>
+<ol type="1" start="9">
+<li>Click on cell A1</li>
+<li>Click on <code>Table Design</code></li>
+<li>Note that the name of the table is <code>Table1</code></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create the Microsoft Form" duration="3">
+        <ol type="1" start="1">
+<li>Launch Microsoft Forms</li>
+<li>Click on <code>New Form</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/a5ef969eac53ec43.png"></p>
+<ol type="1" start="3">
+<li>Set the form title as <code>Collect responses</code></li>
+<li>Add a <code>Text</code> question type</li>
+<li>Set the question as <code>Enter your response</code></li>
+<li>Toggle <code>Required</code> on</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/e7647da7664c6019.png"></p>
+<ol type="1" start="7">
+<li>Click <code>Collect responses</code></li>
+<li>Check <code>Shorten URL</code></li>
+<li>Click <code>Copy link</code> and save that link somewhere for later</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/ed720b3c76e7fcd4.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create the automated cloud flow" duration="11">
+        <ol type="1" start="1">
+<li>Launch Microsoft Power Automate</li>
+</ol>
+<h2 is-upgraded><strong>Create the flow</strong></h2>
+<ol type="1" start="2">
+<li>Click <code>Create</code></li>
+<li>Click <code>Automated cloud flow</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/3041e60f57d852e4.png"></p>
+<ol type="1" start="4">
+<li>Set the flow name as <code>Collect responses</code></li>
+<li>Select <code>When a new response is submitted</code></li>
+<li>Click <code>Create</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/2c1e1622c70599a2.png"></p>
+<h2 is-upgraded><strong>Turn off the new designer</strong></h2>
+<ol type="1" start="7">
+<li>Toggle the <code>New designer</code> to off</li>
+</ol>
+<h2 is-upgraded><strong>Select the form to trigger the flow</strong></h2>
+<ol type="1" start="8">
+<li>For the Form Id, select the form <code>Collect responses</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/bcac4868572e997d.png"></p>
+<ol type="1" start="9">
+<li>Add an action <code>Get response details</code></li>
+<li>For the Form Id, select the form <code>Collect responses</code></li>
+<li>For the Response Id, select the dynamic content <code>Response Id</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/2b8b47fc5b29d472.png"></p>
+<ol type="1" start="12">
+<li>Save and test. The flow is waiting for a form submission.</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/1576ebba8c6ae1a9.png"></p>
+<ol type="1" start="13">
+<li>Using the form link you copied earlier, submit a response to your form</li>
+<li>Expand <code>Get response details</code> to see the run result</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/225ce6f3d55459b3.png"></p>
+<ol type="1" start="15">
+<li>Resume editing the flow</li>
+<li>Add the action <code>Add a row into a table</code></li>
+<li>Set the field values based on the table</li>
+</ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Field</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Value</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Location</p>
+</td><td colspan="1" rowspan="1"><p>OneDrive for Business</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Document Library</p>
+</td><td colspan="1" rowspan="1"><p>OneDrive</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>File</p>
+</td><td colspan="1" rowspan="1"><p><em>use the folder icon to navigate to responses.xlsx</em></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Table</p>
+</td><td colspan="1" rowspan="1"><p>Table1</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>email</p>
+</td><td colspan="1" rowspan="1"><p><em>Dynamic content Responders&#39; Email</em></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>response</p>
+</td><td colspan="1" rowspan="1"><p><em>Dynamic content Enter your response</em></p>
+</td></tr>
+</table>
+<p class="image-container"><img style="width: 2048.00px" src="img/a0c0f3984597256.png"></p>
+<h2 is-upgraded><strong>Run the flow with a recently used trigger</strong></h2>
+<ol type="1" start="18">
+<li>Click <code>Save</code></li>
+<li>Click <code>Test</code></li>
+<li>Click <code>Automatically</code></li>
+<li>Click <code>With a recently used trigger</code></li>
+<li>Select the recently succeeded trigger</li>
+<li>Click <code>Test</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/674fe3027c35981e.png"></p>
+<ol type="1" start="24">
+<li>Check <code>responses.xlsx</code> to verify that the form response was saved to Excel</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/d25821a45bff5f0e.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations" duration="0">
+        <p>Congratulations, you created your first automated cloud flow</p>
+<p>Triggers and actions used:</p>
+<ul>
+<li>Connector : Microsoft Forms, trigger : When a new response is submitted</li>
+<li>Connector : Microsoft Forms, action : Get response details</li>
+<li>Connector : Excel Online (Business), action : Add a row into a table</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
