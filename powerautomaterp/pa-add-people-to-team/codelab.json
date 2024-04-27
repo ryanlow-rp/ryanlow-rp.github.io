@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-04-27T09:25:44Z",
+  "id": "pa-add-people-to-team",
+  "duration": 8,
+  "title": "Power Automate - Add people to a         Team",
+  "authors": "Ryan Low",
+  "summary": "In this codelab, you'll use Power Automate to add people to a Team",
+  "source": "1YPhZKZn4zUbnYScReee5spbpOv-4xQAksJ-fn0TP_Q0",
+  "theme": "powerautomate",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "powerautomate"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "pa-add-people-to-team"
+}

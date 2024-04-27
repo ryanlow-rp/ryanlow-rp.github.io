@@ -1,0 +1,244 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Power Automate - Add people to a         Team</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="pa-add-people-to-team"
+                  title="Power Automate - Add people to a         Team"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introduction" duration="0">
+        <p><a href="https://www.microsoft.com/en-sg/power-platform/products/power-automate" target="_blank">https://www.microsoft.com/en-sg/power-platform/products/power-automate</a></p>
+<p><strong>Last Updated:</strong> 2024-04-27</p>
+<h2 is-upgraded><strong>Core Concepts</strong></h2>
+<p>A Power Automate flow consists of 1 trigger and 1 or more actions</p>
+<ul>
+<li>Instant cloud flow - triggered manually</li>
+<li>Automated cloud flow - triggered by a connector</li>
+<li>Scheduled cloud flow - triggered based on a predetermined schedule</li>
+</ul>
+<h3 is-upgraded><strong>Connector</strong></h3>
+<p>Connectors serve as the bridge between Power Automate and external services</p>
+<p>Connectors offer triggers and actions:</p>
+<ul>
+<li>Triggers - Events that start a workflow</li>
+<li>Actions - Tasks carried out once a workflow has started</li>
+</ul>
+<h2 is-upgraded><strong>What you&#39;ll build</strong></h2>
+<p>In this codelab, you will create an instant cloud flow.</p>
+<p>The flow will add people from a list of email addresses in an Excel file to a Microsoft Team</p>
+<aside class="warning"><p><strong>Note : </strong></p>
+</aside>
+<h2 class="checklist" is-upgraded><strong>What you&#39;ll learn</strong></h2>
+<ul class="checklist">
+<li>How to create an instant cloud flow</li>
+<li>How to read from an Excel file</li>
+<li>How to use actions</li>
+</ul>
+<h2 is-upgraded><strong>What you&#39;ll need</strong></h2>
+<ul>
+<li>A web browser</li>
+<li>Access to Power Automate, OneDrive<br></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create the Microsoft Team" duration="2">
+        <ol type="1" start="1">
+<li>Launch Microsoft Teams and click <code>Teams</code></li>
+<li>Click <code>Join or create team</code></li>
+<li>Click <code>Create team</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/99efa5dec328b6ee.png"></p>
+<ol type="1" start="4">
+<li>Click <code>Class </code></li>
+</ol>
+<aside class="special"><p>See <a href="https://support.microsoft.com/en-gb/topic/choose-a-team-type-to-collaborate-in-microsoft-teams-0a971053-d640-4555-9fd7-f785c2b99e67" target="_blank">Choose a team type to collaborate in Microsoft Teams</a> for details about the different templates.</p>
+</aside>
+<p class="image-container"><img style="width: 2048.00px" src="img/fab3cc3d384186e5.png"></p>
+<ol type="1" start="5">
+<li>Click <code>Use this template</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/d04cfb8b7dee4cf2.png"></p>
+<ol type="1" start="6">
+<li>Set the <code>Team name</code></li>
+<li>Click <code>Create</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/abf9f485f824edae.png"></p>
+<ol type="1" start="8">
+<li>Skip the step on adding members to the team</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create the Microsoft Excel file" duration="2">
+        <ol type="1" start="1">
+<li>Launch Microsoft OneDrive</li>
+<li>Create a folder <code>PowerAutomateRP</code></li>
+<li>Create a file <code>namelist.xlsx</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/57069717878ced7.png"></p>
+<ol type="1" start="4">
+<li>Set cell A1 as <code>email</code></li>
+<li>From cell A2 downwards, add the email addresses of the people to be added to the Team</li>
+<li>Click on cell A1</li>
+<li>Click on <code>Format As Table</code> and choose a style</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/1048cb7afaf6f32f.png"></p>
+<ol type="1" start="8">
+<li>Check the range of cells to be formatted as a table is correct</li>
+<li>Ensure that <code>My table has headers</code> is checked</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/87ef1cf0f58ea548.png"></p>
+<ol type="1" start="10">
+<li>Click on cell A1</li>
+<li>Click on <code>Table Design</code></li>
+<li>Note that the name of the table is <code>Table1</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/39d768a7f1b21e7e.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create the instant cloud flow (Part 1)" duration="2">
+        <ol type="1" start="1">
+<li>Launch Microsoft Power Automate</li>
+</ol>
+<h2 is-upgraded><strong>Create the flow</strong></h2>
+<ol type="1" start="2">
+<li>Click <code>Create</code></li>
+<li>Click <code>Instant cloud flow</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/3041e60f57d852e4.png"></p>
+<ol type="1" start="4">
+<li>Set the flow name as <code>Add people to teams</code></li>
+<li>Select <code>Manually trigger a flow</code></li>
+<li>Click <code>Create</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/ceec9b822358fc9.png"></p>
+<h2 is-upgraded><strong>Turn off the new designer</strong></h2>
+<ol type="1" start="7">
+<li>Toggle the <code>New designer</code> to off</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/2382c18b06f6f479.png"></p>
+<h2 is-upgraded><strong>Read the Excel file</strong></h2>
+<ol type="1" start="8">
+<li>Click <code>New step</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/d675a428e5d0b44c.png"></p>
+<ol type="1" start="9">
+<li>Search for and add the action <code>List rows present in a table</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/6730c2bc9ef5cf13.png"></p>
+<ol type="1" start="10">
+<li>Set the field values based on the table</li>
+</ol>
+<table>
+<tr><td colspan="1" rowspan="1"><p><strong>Field</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>Value</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Location</p>
+</td><td colspan="1" rowspan="1"><p>OneDrive for Business</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Document Library</p>
+</td><td colspan="1" rowspan="1"><p>OneDrive</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>File</p>
+</td><td colspan="1" rowspan="1"><p><em>use the folder icon to navigate to namelist.xlsx</em></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>Table</p>
+</td><td colspan="1" rowspan="1"><p>Table1</p>
+</td></tr>
+</table>
+<p class="image-container"><img style="width: 2048.00px" src="img/21ac903082092d1c.png"></p>
+<ol type="1" start="11">
+<li>Click <code>Save</code></li>
+<li>Click <code>Test</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/cdde5d3f578f4f4d.png"></p>
+<ol type="1" start="13">
+<li>Click <code>Manually</code></li>
+<li>Click <code>Test</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/26fdf539d94a9e10.png"></p>
+<ol type="1" start="15">
+<li>Click <code>Continue</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/d7f758408214da01.png"></p>
+<ol type="1" start="16">
+<li>Click <code>Run flow</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/7069a384fc220283.png"></p>
+<ol type="1" start="17">
+<li>Click on <code>List rows present in a table</code> to expand the action</li>
+<li>Under <strong>OUTPUTS</strong>, click on <code>Click to download</code></li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/d73833f646b9b96e.png"></p>
+<ol type="1" start="19">
+<li>The action generated JSON containing the data from the Excel file</li>
+</ol>
+<p class="image-container"><img style="width: 2048.00px" src="img/89c64c75e7f7698b.png"></p>
+<aside class="special"><p>Remember that JSON is just a series of key-value pairs</p>
+<p>Looking at the JSON, we are interested in the key called <strong>value</strong></p>
+<p>The corresponding value for that key is an array containing the data from the excel file</p>
+<p>Bear that in mind as we head into the next section</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create the instant cloud flow (Part 2)" duration="2">
+        <ol type="1" start="1">
+<li>Launch Microsoft Power Automate</li>
+</ol>
+<h2 is-upgraded><strong>Create the flow</strong></h2>
+<ol type="1" start="2">
+<li>Click <code>Create</code></li>
+<li>Click <code>Instant cloud flow</code></li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Congratulations" duration="0">
+        <p>Congratulations, </p>
+<h2 is-upgraded><strong>What&#39;s next?</strong></h2>
+<p>Check out some of these codelabs...</p>
+<h2 is-upgraded><strong>Further reading</strong></h2>
+<h2 is-upgraded><strong>Reference docs</strong></h2>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
